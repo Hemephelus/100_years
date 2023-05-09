@@ -1,10 +1,11 @@
 export function generateData(){
     let data = []
-    let daysInA100Years = 100*52//365.25//52
+    let daysInA100Years = 100*50//365.25//52
 
     for(let i = 0 ; i < daysInA100Years; i++){
         data[i] = `${i}`
     }
+    
     return data
 }
 
@@ -42,9 +43,10 @@ export function calculateYearToDay(dateOfBirth = '1999-10-24',  years = 0) {
     let totalDays = 0
     for(let i = 0; i < +years; i++){
         let year = +dateOfBirth.split('-')[0]+i
-        totalDays += +years*getDaysInYear(year)
+        
+        totalDays += getDaysInYear(year)
     }
-
+    
     return totalDays
     // const dateOfBirthMs = new Date(dateOfBirth).getTime(); // convert date of birth to milliseconds
     // const hundredthBirthdayMs = dateOfBirthMs + hundredYearsInMs; // add 100 years in milliseconds to date of birth
